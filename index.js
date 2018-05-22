@@ -14,7 +14,9 @@ var dAdd = document.getElementById("add"),
     loadBtn = document.getElementById("loadLS"),
     closeHead = document.getElementById("closeHead"),
     searchInp = document.getElementById("searchInp"),
-    sAdd = document.getElementById("showAdd");
+    sAdd = document.getElementById("showAdd"),
+    seRe = "",
+    eqNum = document.getElementById("eqNum");
 
 window.onload = function (){
   var savedJSON = localStorage.getItem('lsJSON');
@@ -105,11 +107,24 @@ function createItem(iTv, nTv){
 
 }
 
+function showEditWindow(){
+    $("#eqInnerDiv").show();
+}
+
 function makeResPanel(dName, dNumber){
   document.getElementById("dSearchRes").innerHTML= "";
   nSdiv = document.createElement("div");
   nSdiv.className = "bottomPanel";
-  nSdiv.innerHTML = "<p class='fg'>"+dName+"</p><p class='fg'>"+dNumber+"</p><button class='botClose' class='fgf' onclick='hideResPanel(this)'>X</Button>"
+  nSdiv.innerHTML = "<p class='fg'>"+dName+"</p><p class='fg' id='seReNum'>"+dNumber+"</p><button class='botClose' class='fgf' onclick='showEditWindow()'>Edit</Button><button class='botClose' class='fgf' onclick='hideResPanel(this)'>X</Button>"
+  document.getElementById("dSearchRes").appendChild(nSdiv);
+  $("#dSearchRes").animate({bottom: "0px"}, 400);
+}
+
+function makeNotFoundResPanel(){
+  document.getElementById("dSearchRes").innerHTML= "";
+  nSdiv = document.createElement("div");
+  nSdiv.className = "bottomPanel";
+  nSdiv.innerHTML = "<p class='mNFRP'>Sorry, no match found</p><button class='botClose' class='fgf' onclick='hideResPanel(this)'>X</Button>";
   document.getElementById("dSearchRes").appendChild(nSdiv);
   $("#dSearchRes").animate({bottom: "0px"}, 400);
 }
@@ -127,6 +142,27 @@ function search(nameKey, theObj){
 //-----END FUNCTION SECTION-----------
 
 //-----START EVENT LISTENERS----------
+$("#closeEditWindow").click(function(){
+    $("#eqInnerDiv").hide();
+});
+
+$("#eqEnter").click(function (){
+    itemObj[seRe] = eqNum.value;
+    console.log(itemObj[seRe]);
+    console.log(itemObj);
+    
+    disp.innerHTML = "";
+    for (var tKey in itemObj){
+        console.log(tKey.toUpperCase()+ ':', itemObj[tKey]);
+        createItem(tKey, itemObj[tKey]);
+    }
+    $("#seReNum").text(eqNum.value);
+    $("#eqInnerDiv").hide();
+    $("#dSearchRes").animate({bottom: "0px"}, 400);
+    $("#searchDiv").animate({bottom: "-120px"}, 399);
+    $("#enableSearch").animate({bottom: "-3px"}, 400);
+});
+
 $("#enableSearch").click(function(){
   if(searchOpen == 0){
     $("#searchDiv").animate({bottom: "0px"}, 400);
@@ -145,11 +181,11 @@ $("#search").click(function (){
   var searchResult = search(searchInp.value, Object.getOwnPropertyNames(itemObj));
 
   if(searchResult == ""){
-    searchResult = "No match found ";
-    makeResPanel(searchResult, " Sorry")
+    makeNotFoundResPanel();
   }
   else{
     makeResPanel(searchResult, itemObj[searchResult][0]);
+    seRe = searchResult;
   }
 })
 
