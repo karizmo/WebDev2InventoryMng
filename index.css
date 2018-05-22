@@ -89,7 +89,8 @@ body {
 
 }
 #search{
-  width:10vw
+  width:10vw;
+  font-size: 20pt;
 }
 #dSearchRes{
   position:fixed;
