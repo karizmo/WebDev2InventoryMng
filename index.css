@@ -166,7 +166,9 @@ p{
   display:none;
   margin-top:30px;
   border-radius: 8px;
-  background-color: #9d5257;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 40pt;
 }
 
 #headBar{
