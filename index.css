@@ -2,9 +2,11 @@ body {
   margin:0px;
 }
 #display{
+  /*
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  */
 }
 #controls{
   display:flex;
