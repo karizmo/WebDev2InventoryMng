@@ -1,0 +1,183 @@
+body {
+  margin:0px;
+}
+#display{
+  /*
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  */
+}
+#controls{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#dButtons{
+  width:99vw;
+  height:100px;
+  display: flex;
+  justify-content: space-space-between;
+}
+#dInputs{
+  width:100vw;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.topBtn{
+  /*
+  position:relative;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  margin: auto;
+  */
+  text-align: center;
+  margin-top:17px;
+  font-size: 35pt;
+  font-family: 'Nunito', sans-serif;
+}
+#showAdd{
+  width:33vw;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+#add{
+  width:250px;
+  margin-left: 10px;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  font-size:35pt;
+}
+#saveToLs{
+  width:33vw;
+  background-color:white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+#remove{
+  width:33vw;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#enableSearch{
+  position:fixed;
+  bottom:-3px;
+  left:2px;
+  height: 140px;
+  width: 140px;
+  background-image: url("img/searchIcon.png");
+  background-size: contain;
+  z-index:5;
+}
+#searchDiv{
+  height:120px;
+  display: flex;
+  position:fixed;
+  bottom:-120px;
+  z-index: 1;
+}
+#searchInp{
+  width:90vw;
+
+}
+#search{
+  width:10vw
+}
+#dSearchRes{
+  position:fixed;
+  bottom: -255px;
+  height:250px;
+  width:100vw;
+  display:flex;
+  justify-content: space-between;
+  z-index: 6;
+  background-color: white;
+  border-top: 2px solid black;
+}
+
+.botClose{
+  position:relative;
+  top:0;
+  right:0;
+  height:80px;
+  width:80px;
+  margin-top: 40px;
+  font-size: 15pt;
+}
+.bottomPanel{
+  position:relative;
+  top:0;
+  left:0;
+  width:100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  align-content: stretch;
+  margin-top:30px;
+}
+
+input#item {
+    width: 300px;
+    padding: 0 20px;
+}
+input#numItem {
+    width: 100px;
+    padding: 0 20px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 45px;
+    line-height: 3;
+}
+
+.format{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.fg{
+  width: 150px;
+  height:auto;
+  font-size: 35pt;
+}
+.fgf{
+  width: 150px;
+  height:auto;
+}
+
+p{
+  font-size: 15pt;
+}
+
+.close{
+  height:80px;
+  width:80px;
+  display:none;
+  margin-top:30px;
+  border-radius: 8px;
+  background-color: #9d5257;
+}
+
+#headBar{
+  background-color: #0079bf;
+  color:white;
+}
+#headBar p{
+  font-size: 30pt;
+}
+#closeHead{
+  display: none;
+}
+
+.format:nth-child(odd){
+  background-color: #f5deb3;
+}

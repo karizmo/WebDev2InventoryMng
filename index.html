@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inventory</title>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+</head>
+<body>
+  <div id="controls">
+    <div id="dButtons">
+      <div id="showAdd">
+        <div class="topBtn">Add Items</div>
+      </div>
+      <div id="saveToLs">
+        <div class="topBtn">Save Changes</div>
+      </div>
+      <div id="remove">
+        <div class="topBtn">Remove Items</div>
+      </div>
+    </div>
+    <div id="dInputs">
+      <input type="text" placeholder="item" id="item" pattern="[A-Za-z]">
+      <input type="number" placeholder="0" id="numItem">
+      <button id="add">Add</button>
+    </div>
+    <!--<button id="loadLS">Load Inventory</button>-->
+  </div>
+  <div id="enableSearch">
+
+  </div>
+  <div id="searchDiv">
+    <input type="text" placeholder="Search" id="searchInp" pattern="[^A-Za-z]">
+    <button id="search">Search</button>
+  </div>
+  <div id="dSearchRes"></div>
+  <div id="display">
+    <div id="invetoryItems"></div>
+    <div class="format" id="headBar">
+      <p class="fgf" id="itemHead">Item</p>
+      <p class="fgf" id="quantityHead">Quantity</p>
+      <p id="closeHead">Remove</p>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
