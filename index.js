@@ -150,7 +150,7 @@ $("#eqEnter").click(function (){
     itemObj[seRe] = eqNum.value;
     console.log(itemObj[seRe]);
     console.log(itemObj);
-    
+
     disp.innerHTML = "";
     for (var tKey in itemObj){
         console.log(tKey.toUpperCase()+ ':', itemObj[tKey]);
@@ -184,8 +184,9 @@ $("#search").click(function (){
     makeNotFoundResPanel();
   }
   else{
-    makeResPanel(searchResult, itemObj[searchResult][0]);
+    makeResPanel(searchResult, itemObj[searchResult]);
     seRe = searchResult;
+    console.log(itemObj[searchResult]);
   }
 })
 
