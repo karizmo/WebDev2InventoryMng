@@ -9,23 +9,52 @@ body {
   */
   height:auto;
 }
-#controls{
+/* to push head down after position fixed on controls*/
+#controlsCopy{
+  position:fixed;
+  top:0;
   display:flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+#dBcopy{
+  width:99vw;
+  height:100px;
+  display: flex;
+  justify-content: space-space-between;
+}
+#dIcopy{
+  width:100vw;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+/*push down @@@@@@@@@@@@@@@@@@@@@@*/
+
+#controls{
+  position:fixed;
+  top:0;
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index:50;
 }
 #dButtons{
   width:99vw;
   height:100px;
   display: flex;
   justify-content: space-space-between;
+  box-shadow: 0px 8px 10px rgba(0,0,0,0.6);
 }
 #dInputs{
-  width:100vw;
+  width:97vw;
   height: 70px;
   display: flex;
   justify-content: center;
-  margin: 10px;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.5);
+  box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
 }
 .topBtn{
   /*
@@ -146,7 +175,7 @@ body {
     width:45px;
     border-radius: 50%;
     cursor:pointer;
-      
+
 }
 #eqClose p{
     position:relative;
@@ -167,7 +196,7 @@ body {
     margin-bottom: 15px;
     background-color:#af2525;
     border-radius: 8px;
-    
+
 }
 #eqEnter p{
     font-size:25pt;
@@ -177,7 +206,7 @@ body {
     right:0;
     left:0;
     margin:auto;
-    
+
 }
 
 .botClose{
@@ -251,6 +280,16 @@ p{
   border: 1px solid black;
   font-size: 40pt;
 }
+.editHide{
+  position:relative;
+  top:0;
+  right:0;
+  height:80px;
+  width:80px;
+  margin-top: 40px;
+  font-size: 15pt;
+  display: none;
+}
 
 #headBar{
   background-color: #0079bf;
@@ -261,6 +300,9 @@ p{
 }
 #closeHead{
   display: none;
+}
+#closeHead1{
+  display:none;
 }
 
 .format:nth-child(odd){
