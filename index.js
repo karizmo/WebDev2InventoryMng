@@ -64,6 +64,8 @@ function hideResPanel(sBtn){
   setTimeout(function(){
     ((sBtn.parentNode).parentNode).removeChild(sBtn.parentNode);
   }, 350)
+
+  seRe = "";
 }
 
 function removeThis(btn){
@@ -174,13 +176,22 @@ $("#eqEnter").click(function (){
       $("#enableSearch").animate({bottom: "-3px"}, 400);
 
       //edit remove buttons go back to display None. *This changes them back to block
+
       var Match = document.querySelectorAll(".close");
       var editmatch = document.querySelectorAll(".editHide");
       for(var i = 0; i<Match.length; i++){
         Match[i].style.display= "block";
         editmatch[i].style.display= "block";
       }
+
+      if(removeOpen == 0){
+        toggleCloseButton("block");
+        removeOpen++;
+        dRemove.style.backgroundColor = "#293042";
+        dRemove.style.color = "white"
+      }
       seRe = "";
+      console.log("eqENter IF");
     }
     else{
       itemObj[editIndiv] = eqNum.value;
@@ -273,7 +284,6 @@ dRemove.addEventListener("click", function(){
     removeOpen++;
     dRemove.style.backgroundColor = "#293042";
     dRemove.style.color = "white"
-
   }
   else if(removeOpen > 0){
     toggleCloseButton("none");
