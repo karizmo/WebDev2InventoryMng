@@ -114,6 +114,8 @@ function createItem(iTv, nTv){
 
 function showEditWindow(iName){
   editIndiv = $(iName.parentNode).attr('id');
+  eqNum.value = itemObj[editIndiv];
+  
   $("#eqInnerDiv").show();
 }
 
